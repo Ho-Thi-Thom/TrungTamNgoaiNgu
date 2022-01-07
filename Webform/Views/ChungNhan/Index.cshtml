@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Tra cứu kết quả thi";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info ">
+        @TempData["Message"]
+    </div>
+}
+
+<h4>Tra cứu kết quả thi</h4>
+<hr />
+<div id="main">
+    <div style="min-width:300px" class="border border-dark border-5 rounded">
+        <div style="padding:16px">
+            <form id="formSearch">
+                <div class="form-group">
+                    <label class="control-label">Nhập số báo danh</label>
+                    <input placeholder="Nhập số báo danh" id="sbd" class="form-control" maxlength="5" />
+                    <span id="inputError" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="search" value="Tra cứu" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(() => {
+            $('#formSearch').submit((e) => {
+                e.preventDefault();
+                console.log($('#sbd').val());
+                if ($('#sbd').val() != "") {
+                    $.post('/chungnhan/ajaxChungNhanKetQua', { SBD: $('#sbd').val() }, (data) => {
+                        console.log(data);
+                        if (data) {
+                            if ($('.table') != null) {
+                                $(".table").remove();
+                            }
+                            var headers = ["Khoá thi","Số báo danh", "Phòng thi", "Họ và tên", "Số điện thoại", "Ngày sinh", ""];
+                            var table = document.createElement("TABLE");
+                            table.className = "table table-striped table-bordered table-hover mt-5";
+
+                            data.forEach((item, index) => {
+                                var row = table.insertRow(index);
+                                row.insertCell(0).innerHTML = item.khoaThi;
+                                row.insertCell(1).innerHTML = item.sbd;
+                                row.insertCell(2).innerHTML = item.phongThi.tenPhong;
+                                row.insertCell(3).innerHTML = item.nguoiDung.hoNguoiDung + " " + item.nguoiDung.tenNguoiDung;
+                                row.insertCell(4).innerHTML = item.nguoiDung.soDienThoai;
+                                var date = new Date(item.nguoiDung.ngaySinh);
+                                var newdate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+                                row.insertCell(5).innerHTML = newdate;
+                                row.insertCell(6).outerHTML = `<a class = "btn btn-info m-2" href="/ChungNhan/ChungNhan/?maphong=${item.phongThi.maPhong}&cccd=${item.nguoiDung.cccd}">Xem kết quả</a>`;
+                            })
+
+                            var header = table.createTHead();
+                            var headerRow = header.insertRow(0);
+                            headers.forEach((item, index) => {
+                                headerRow.insertCell(index).outerHTML = `<th>${item}</th>`;
+                            })
+
+                            $('#main').append(table);
+                        } else {
+                            alert("Chưa có dữ liệu vui lòng kiểm tra lại");
+                        }
+                    });
+                } else {
+                    alert("Vui lòng nhập đầy đủ thông tin");
+                }
+            });
+        });
+    </script>
+}

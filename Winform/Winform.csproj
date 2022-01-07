@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C89C42C9-32FF-4C73-9AB7-3528D30EACC4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Winform</RootNamespace>
+    <AssemblyName>Winform</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BIZ\DuThi.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\GiamThi.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\GiaoVien.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\KetQuaThi.cs" />
+    <Compile Include="BIZ\KhoaThi.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\NguoiDung.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\PhongThi.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\sysdiagram.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\ThiSinh.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\TrinhDo.cs">
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\TrungTamNgoaiNguEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrungTamNgoaiNguEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\TrungTamNgoaiNguEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrungTamNgoaiNguEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\TrungTamNgoaiNguEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrungTamNgoaiNguEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\_GiaoVien.cs" />
+    <Compile Include="BIZ\_KhoaThi.cs" />
+    <Compile Include="BIZ\_NguoiDung.cs" />
+    <Compile Include="BIZ\_PhongThi.cs" />
+    <Compile Include="BIZ\_TrinhDo.cs" />
+    <Compile Include="DAL\KhoaThiDAL.cs" />
+    <Compile Include="DAL\NguoiDungDAL.cs" />
+    <Compile Include="DAL\PhongThiDAL.cs" />
+    <Compile Include="GUI\FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FMain.designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FKhoaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FKhoaThi.designer.cs">
+      <DependentUpon>FKhoaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FThemDuThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FThemDuThi.designer.cs">
+      <DependentUpon>FThemDuThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FThemGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FThemGiaoVien.designer.cs">
+      <DependentUpon>FThemGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FThemSuaKhoaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLKhoaThi\FThemSuaKhoaThi.designer.cs">
+      <DependentUpon>FThemSuaKhoaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FDangKyDuThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FDangKyDuThi.designer.cs">
+      <DependentUpon>FDangKyDuThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FKetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FKetQuaThi.designer.cs">
+      <DependentUpon>FKetQuaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FNguoiDung.designer.cs">
+      <DependentUpon>FNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FThemSuaNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLNguoiDung\FThemSuaNguoiDung.designer.cs">
+      <DependentUpon>FThemSuaNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLPhongThi\FNhiemVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLPhongThi\FNhiemVu.designer.cs">
+      <DependentUpon>FNhiemVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLPhongThi\FPhongThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLPhongThi\FPhongThi.designer.cs">
+      <DependentUpon>FPhongThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLKhoaThi\FKhoaThi.resx">
+      <DependentUpon>FKhoaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLKhoaThi\FThemDuThi.resx">
+      <DependentUpon>FThemDuThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLKhoaThi\FThemGiaoVien.resx">
+      <DependentUpon>FThemGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLKhoaThi\FThemSuaKhoaThi.resx">
+      <DependentUpon>FThemSuaKhoaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLNguoiDung\FDangKyDuThi.resx">
+      <DependentUpon>FDangKyDuThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLNguoiDung\FKetQuaThi.resx">
+      <DependentUpon>FKetQuaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLNguoiDung\FNguoiDung.resx">
+      <DependentUpon>FNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLNguoiDung\FThemSuaNguoiDung.resx">
+      <DependentUpon>FThemSuaNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLPhongThi\FNhiemVu.resx">
+      <DependentUpon>FNhiemVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLPhongThi\FPhongThi.resx">
+      <DependentUpon>FPhongThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="BIZ\TrungTamNgoaiNguEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TrungTamNgoaiNguEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BIZ\TrungTamNgoaiNguEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TrungTamNgoaiNguEntities.Context.cs</LastGenOutput>
+      <DependentUpon>TrungTamNgoaiNguEntities.edmx</DependentUpon>
+    </None>
+    <None Include="BIZ\TrungTamNgoaiNguEntities.edmx.diagram">
+      <DependentUpon>TrungTamNgoaiNguEntities.edmx</DependentUpon>
+    </None>
+    <None Include="BIZ\TrungTamNgoaiNguEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TrungTamNgoaiNguEntities.edmx</DependentUpon>
+      <LastGenOutput>TrungTamNgoaiNguEntities.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="TrungTamNgoaiNguModel.KhoaThi" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TrungTamNgoaiNguModel.NguoiDung" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TrungTamNgoaiNguModel.PhongThi" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TrungTamNgoaiNguModel.sysdiagram" Width="1.5" PointX="15.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrungTamNgoaiNguModel.sysdiagram" Width="1.5" PointX="2.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="TrungTamNgoaiNguModel.ThiSinh" Width="1.5" PointX="11.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TrungTamNgoaiNguModel.TrinhDo" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <AssociationConnector Association="TrungTamNgoaiNguModel.FK_DuThi_KhoaThi" ManuallyRouted="false" />

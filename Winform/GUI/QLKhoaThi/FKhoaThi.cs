@@ -114,7 +114,7 @@ namespace Winform.GUI.QLKhoaThi
                         getKhoaThis();
                         getDataPhongThi();
                         dataGridView1.Rows[khoaThiIndex].Selected = true;
-                        FMain.SetVisible(btnThemDuThi, false);
+						FMain.SetVisible(btnThemDuThi, false);
                         MessageBox.Show("Khoá thi đã được chốt, tạo phòng thi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
